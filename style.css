@@ -1,100 +1,347 @@
-﻿
+﻿:root {
+    --main-background-color: rgb(239, 239, 239);
+    --main-background-faded: rgba(239, 239, 239, .4);
+    --main-background-faded2: rgba(239, 239, 239, .8);
+    --main-font-color: #3a3039;
+    --main-font: 'Barlow Semi Condensed';
+    --footer-font: 'Zen Kaku Gothic Antique', sans-serif;
+}
+
 body {
     padding: 0;
     margin: 0;
-    --main-color: rgb(151, 183, 53);
-    background-color: #021626;
-    font-family: 'Mate SC', serif;
+    font-size: 100%;
+    background-color: var(--main-background-color);
 }
 
-#nawigacja {
-    background-color: var(--main-color);
-    color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+/* Header navigation bar section*/
+header, .navbar {
+    background-color: var(--main-background-faded);
 }
 
-    #nawigacja button {
-        padding: 10px;
-        margin: 10px;
-        color: var(--main-color);
-        font-size: 16px;
-        border-radius: 5px;
-        border-style: none;
+header {
+    position: sticky;
+    position: -webkit-sticky; /* Safari */
+    top: 0;
+    z-index: 1;
+}
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        border: 1px;
     }
 
-    #nawigacja a {
-        padding: 20px;
-        color: white;
-        text-decoration: none;
-    }
+        header .navbar a {
+            padding: 5px 5px;
+            margin: 30px;
+            font-family: var(--main-font);
+            font-size: 20px;
+            color: var(--main-font-color);
+            text-decoration: none;
+        }
 
-#banner {
+/* Main website section*/
+.main, .main-aboutme, .main-contact, .main-gallery {
+    width: 100%;
+    background-color: var(--main-background-faded2);
+    height: 1200px;
+    background-position-y: top;
+    background-position-x: center;
+    background-size: cover;
+    position: relative;
+}
+
+.main {
+    background-image: url(assets/background.jpg);
+}
+
+.main-aboutme {
+    background-image: url(assets/background2.jpg);
+}
+
+.main-contact {
+    background-image: url(assets/background3.jpg);
+}
+
+.main-gallery {
+    background-image: url(assets/background4.jpg);
+}
+
+.insideMain {
+    background-color: var(--main-background-faded2);
+    margin: auto;
+    text-align: center;
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, -15%);
+}
+
+/* Text section inside the main sector */
+.message {
+    max-width: 320px;
+    font-family: var(--footer-font);
+    color: var(--main-font-color);
+    font-size: 30px;
+    text-align: center;
+    padding: 130px 140px;
+    animation: slide 2s linear;
+}
+
+@keyframes slide {
+    0% {margin-left: -700px;}
+    5% {margin-left: -600px;}
+    20% {margin-left: -400px;}
+    50% {margin-left: -100px;}
+    75% {margin-left: 0px;}
+    100% {margin-left: 0px;}
+}
+
+/* The gallery tab section */
+.gallery {
+    height: 600px;
+    width: 600px;
+    display: grid;
+    grid-template-rows: 100px 90px 90px 90px 90px 95px;
+    grid-template-columns: 100px 90px 90px 90px 90px 95px;
+    grid-gap: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.gallery img {
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+
+.fade-in {
+    animation: fadeIn 3s;
+    -webkit-animation: fadeIn 3s;
+    -moz-animation: fadeIn 3s;
+    -o-animation: fadeIn 3s;
+    -ms-animation: fadeIn 3s;
+}
+.fade-in2 {
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+}
+
+.fade-in3 {
+    animation: fadeIn 7s;
+    -webkit-animation: fadeIn 7s;
+    -moz-animation: fadeIn 7s;
+    -o-animation: fadeIn 7s;
+    -ms-animation: fadeIn 7s;
+}
+
+.fade-in4 {
+    animation: fadeIn 9s;
+    -webkit-animation: fadeIn 9s;
+    -moz-animation: fadeIn 9s;
+    -o-animation: fadeIn 9s;
+    -ms-animation: fadeIn 9s;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+/* Animation of the img element on the gallery tab */
+#myImg {
+    cursor: pointer;
+    transition: 0.3s;
     width: 100%;
 }
+  
+#myImg:hover {opacity: 0.7;}
 
-#obrazki {
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
     width: 100%;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: center;
-    justify-items: center;
-    background-color: #021626;
+    max-width: 700px;
 }
 
-article {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: space-around;
-    background-color: #021626;
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    font-family: var(--footer-font);
+    font-size: 25px;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+  
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+}
+
+/* Contact form in the contact tab */
+label {
+    font-family: var(--footer-font);
+    font-weight: bold;
+}
+
+input[type=text], input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    resize: vertical;
+}
+  
+input[type=submit] {
+    background-color: #2b5266;
     color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-    article p a {
-        color: var(--main-color);
+input[type=submit]:hover {
+    background-color: #1f2d45;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: var(--main-background-faded2);
+    padding: 20px;
+    height: 560px;
+}
+
+.errorMessage {
+    font-family: var(--footer-font);
+    font-weight: bold;
+    font-size: 12px;
+    margin: 0 0 15px 0;
+    color:red;
+}
+
+@media screen and (max-width: 600px) {
+    .container, label, input {
+      width: 100%;
+      margin-top: 0;
     }
-
-    article h2 {
-        color: var(--main-color);
-        margin-bottom: 5px;
-    }
-
-.kolumna {
-    padding: 30px;
 }
 
-#autor {
-    margin-top: 100px;
-    /*background-image: url(assets/4f0262e50186aa8055d79a3ba5916e78.jpeg);*/
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 100px;
-    padding-left: 120px;
-}
-
+/* Footer section */
 footer {
+    height: 50px;
     padding: 5px 100px 30px 100px;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 400px 90px;
     justify-content: space-evenly;
-    background-color: grey;
-    color: white;
+    background-color: rgba(239, 239, 239, .4);
+    color: #3a3039;
 }
 
     footer div {
         padding: 15px;
-    }
-
-    footer h4 {
-        font-size: 12px;
-        margin: 10px 0 0 0;
+        margin: 0 0 0 0;
     }
 
     footer p {
-        font-size: 10px;
+        font-family: var(--footer-font);
+        font-size: 16px;
+        font-weight: bold;
     }
 
-    footer h4 i {
-        font-size: 20px;
+    footer a i {
+        size: 100px;
+        color: var(--main-font-color);
+        font-size: 40px;
     }
+

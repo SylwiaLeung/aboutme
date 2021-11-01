@@ -82,14 +82,21 @@ header {
 }
 
 /* Text section inside the main sector */
-.message {
+.message, .messageHeader {
     max-width: 320px;
     font-family: var(--footer-font);
     color: var(--main-font-color);
     font-size: 30px;
     text-align: center;
-    padding: 130px 140px;
     animation: slide 2s linear;
+    
+}
+.message {
+    padding: 0px 140px;
+    font-weight: bold;
+}
+.messageHeader {
+    padding: 110px 140px 0 140px;
 }
 
 @keyframes slide {
@@ -176,13 +183,13 @@ header {
   }
 
 /* Animation of the img element on the gallery tab */
-#myImg {
+.myImg {
     cursor: pointer;
     transition: 0.3s;
     width: 100%;
 }
   
-#myImg:hover {opacity: 0.7;}
+.myImg:hover {opacity: 0.7;}
 
 .modal {
     display: none;

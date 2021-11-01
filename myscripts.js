@@ -1,5 +1,5 @@
 var modal = document.getElementById("myModal");
-var images = document.getElementsByClassName('myImages');
+var images = document.getElementsByClassName('myImg');
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 

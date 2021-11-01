@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sylwia Leung Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/efce61e462.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html">HOME</a>
+            <a href="aboutme.html">ABOUT ME</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+    
+    <section>
+        <div class="main-contact">
+            <div class="insideMain">
+                <div class="container">
+                    <form onchange="allInputsCorrect()">
+                  
+                      <label for="fname">Full Name</label>
+                      <input type="text" id="fname" class="contactInput" name="firstname" placeholder="Your name...">
+                      <p id="error1" class="errorMessage"></p>
+                  
+                      <label for="email">E-mail</label>
+                      <input type="email" id="email" class="contactInput" name="email" placeholder="Your e-mail address...">
+                      <p id="error2" class="errorMessage"></p>
+
+                      <label for="subject">Subject</label>
+                      <textarea id="subject" class="contactInput" name="subject" placeholder="Write something..." style="height:200px"></textarea>
+                      <p id="error3" class="errorMessage"></p>
+                        <!-- required keyword would work better -->
+
+                      <input id="submitButton" type="submit" value="Submit" formtarget="_self" disabled onclick="alert('Your message has been sent')">
+                      <script src="myscripts.js"></script>
+                  
+                    </form>
+                  </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div>
+            <p>&copy; Sylwia Leung 2021</p>
+        </div>
+        <div>
+            <a href="https://www.facebook.com/profile.php?id=100070573840086"><i class="fab fa-facebook-square"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
